@@ -93,6 +93,8 @@ def run_method_test(filepath, method, label):
 
     except Exception as e:
         print(f"      CRITICAL ERROR: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 
@@ -104,7 +106,9 @@ def verify_system():
 
     results = []
     results.append(run_method_test(filepath, "admiralty", "Admiralty Method"))
-    results.append(run_method_test(filepath, "ols", "Least Square (UTide)"))
+    results.append(run_method_test(filepath, "lstsq", "Least Square (NumPy)"))
+    # Uncomment jika UTide tersedia:
+    # results.append(run_method_test(filepath, "ols", "Least Square (UTide)"))
 
     print("\n--- Ringkasan ---")
     if all(results):
