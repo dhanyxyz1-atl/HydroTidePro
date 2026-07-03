@@ -82,9 +82,7 @@ class ResultWindow(QWidget):
 
         try:
             reconstructor = self.data['reconstructor']
-            # prediksi mulai dari waktu sekarang (atau bisa dari data terakhir)
             time_range = pd.date_range(start=pd.Timestamp.now(), periods=8760, freq='h')
-            # reconstruct menerima kedua kasus engine (LeastSquare optional constituents)
             predicted_heights = reconstructor.reconstruct(time_range, self.data.get('constituents'))
 
             self.predicted_df = pd.DataFrame({
@@ -108,7 +106,14 @@ class ResultWindow(QWidget):
         try:
             self.file_label.setText(f"Memproses: {os.path.basename(filename)}...")
 
-            method_val = 'ols' if self.mode == 'Least Square' else 'admiralty'
+            # Deteksi method dari mode
+            if 'UTide' in self.mode:
+                method_val = 'ols'
+            elif 'NumPy' in self.mode:
+                method_val = 'lstsq'
+            else:
+                method_val = 'admiralty'
+
             result = perform_analysis(filename, method=method_val)
 
             self.data = result
