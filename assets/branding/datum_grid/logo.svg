@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 128">
+  <rect width="520" height="128" rx="24" fill="#082f49"/>
+  <g transform="translate(20 16)">
+    <rect width="96" height="96" rx="20" fill="#0b5cad"/>
+    <path d="M16 28h64M16 48h64M16 68h64M28 16v64M50 16v64M72 16v64" stroke="#38bdf8" stroke-width="3" opacity=".55"/>
+    <path d="M15 58c10-18 20-18 31 0s23 18 37 0" fill="none" stroke="#e0f2fe" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="136" y="58" fill="#f8fafc" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">HydroTide Pro</text>
+  <text x="138" y="89" fill="#bae6fd" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Datum Grid branding</text>
+</svg>
